@@ -16,11 +16,20 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
+    - name: Install Protocol Buffers Compiler (protoc)
+      run: |
+        sudo apt update
+        sudo apt install -y protobuf-compiler
+    
     - name: Build
       run: cargo build --verbose
+      
     - name: Run Clippy
       run: cargo clippy --all-targets --all-features
     - name: Build the stack
+    
       run: docker-compose -f nats-compose.yml up -d
     - name: Run tests
+    
       run: cargo test --verbose
