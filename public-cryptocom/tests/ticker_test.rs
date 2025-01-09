@@ -134,7 +134,7 @@ async fn stream_ticker_twice() -> Result<()> {
         let response: TickerMessage = TickerMessage::decode(first.payload)?;
 
         assert_eq!(response.exchange, Exchange::Cryptocom as i32);
-        assert_eq!(response.tick.is_some(), true);
+        assert!(response.tick.is_some());
 
         if let Some(tick) = response.tick {
             assert_eq!(tick.ask_price, "96448.00");
@@ -146,7 +146,7 @@ async fn stream_ticker_twice() -> Result<()> {
         let response: TickerMessage = TickerMessage::decode(second.payload)?;
 
         assert_eq!(response.exchange, Exchange::Cryptocom as i32);
-        assert_eq!(response.tick.is_some(), true);
+        assert!(response.tick.is_some());
 
         if let Some(tick) = response.tick {
             assert_eq!(tick.ask_price, "96460.00");
