@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package error;
+
+message ErrorMessage {
+
+  ErrorCode code = 1;
+  string message = 2;
+  optional string exchange_message = 3;
+  int64 timestamp = 4;
+}
+
+enum ErrorCode {
+
+  UNKNOWN_CODE = 0;
+  MARKET_NOT_FOUND = 1;
+  OFFER_NOT_FOUND = 2;
+  INSUFFICIENT_FUNDS = 3;
+  LIMIT_EXCEEDED = 5;
+  BAD_AUTHENTICATION = 6;
+  BAD_REQUEST = 7;
+  TIMEOUT = 8;
+  UNDER_MAINTENANCE = 9;
+  ACTION_BLOCKED = 10;
+  OFFER_COULD_NOT_BE_FILLED = 11;
+  OFFER_UNDER_MINIMUM = 12;
+  SELF_TRADING = 13;
+  CONNECTION_REFUSED = 14;
+}

@@ -1,0 +1,44 @@
+[package]
+name = "public-cryptocom"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "public-cryptocom"
+path = "src/main.rs"
+
+[dependencies]
+log = "0.4.22"
+bytes = "1.9.0"
+prost = "0.13.4"
+config = "0.15.4"
+chrono = "0.4.39"
+anyhow = "1.0.95"
+futures = "0.3.31"
+async-nats = "0.38.0"
+reqwest = { version = "0.12.12", features = ["json"] }
+
+# serde
+serde_json = "1.0.135"
+serde = { version = "1.0.217", features = ["derive"] }
+
+# tokio
+tokio = { version = "1.42.0", features = ["full"] }
+tokio-tungstenite = { version = "0.24.0", features = ["native-tls"] }
+
+# axum
+axum = "0.8.1"
+axum-prometheus = "0.8.0"
+
+# decimals
+rust_decimal = "1.36.0"
+rust_decimal_macros = "1.36.0"
+
+# internal
+http = "0.1.0"
+protocol = "0.1.0"
+connector = "0.1.0"
+
+[dev-dependencies]
+mockito = "1.6.1"
+ws-mock = "0.2.1"

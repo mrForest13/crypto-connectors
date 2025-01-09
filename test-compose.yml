@@ -1,0 +1,62 @@
+version: "3.3"
+
+services:
+
+  nats:
+    image: nats
+    container_name: nats
+    ports:
+      - "4222:4222"
+    networks:
+      - test
+
+  cryptocom-1:
+    image: public-cryptocom
+    container_name: cryptocom-1
+    ports:
+      - "8080:8080"
+    depends_on:
+      - nats
+    environment:
+      - HTTP_HOST=0.0.0.0
+      - HTTP_PORT=8080
+      - NATS_HOST=nats
+      - NATS_PORT=4222
+      - EXCHANGE_MARKETS=*_eur
+    networks:
+      - test
+
+  cryptocom-2:
+    image: public-cryptocom
+    container_name: cryptocom-2
+    ports:
+      - "8081:8080"
+    depends_on:
+      - nats
+    environment:
+      - HTTP_HOST=0.0.0.0
+      - HTTP_PORT=8080
+      - NATS_HOST=nats
+      - NATS_PORT=4222
+      - EXCHANGE_MARKETS=*_usd
+    networks:
+      - test
+
+  kraken-1:
+    image: public-kraken
+    container_name: kraken-1
+    ports:
+      - "8082:8080"
+    depends_on:
+      - nats
+    environment:
+      - HTTP_HOST=0.0.0.0
+      - HTTP_PORT=8080
+      - NATS_HOST=nats
+      - NATS_PORT=4222
+      - EXCHANGE_MARKETS=*_*
+    networks:
+      - test
+
+networks:
+  test:

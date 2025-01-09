@@ -1,0 +1,8 @@
+[workspace]
+resolver = "2"
+members = ["public-cryptocom", "http", "protocol", "sdk", "public-connector", "public-kraken"]
+
+[patch.crates-io]
+http = { path = "http" }
+protocol = { path = "protocol" }
+connector = { path = "public-connector" }

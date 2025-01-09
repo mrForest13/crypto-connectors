@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package market;
+
+import "types.proto";
+
+message MarketsRequest {
+
+  repeated string symbols = 1;
+  optional MarketType market_type = 2;
+}
+
+message MarketsMessage {
+
+  int64 timestamp = 1;
+  types.Exchange exchange = 2;
+  repeated Market markets = 3;
+}
+
+message Market {
+
+  string symbol = 1;
+  int32 price_precision = 2;
+  int32 rate_precision = 3;
+  int32 size_precision = 4;
+  string min_size = 5;
+  string max_size = 6;
+  string min_price = 7;
+  string max_price = 8;
+  MarketType market_type = 9;
+  optional int64 expiry_timestamp = 10;
+}
+
+enum MarketType {
+
+  SPOT = 0;
+  FUTURE = 1;
+  PERPETUAL = 2;
+}

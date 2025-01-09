@@ -1,0 +1,5 @@
+ws_url = "wss://stream.crypto.com/exchange/v1/market"
+markets_url = "https://api.crypto.com/exchange/v1/public/get-instruments"
+markets = "*_*"
+max_concurrency = 10
+max_buffer_size = 100

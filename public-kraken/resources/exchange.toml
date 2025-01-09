@@ -1,0 +1,4 @@
+ws_url = "wss://ws.kraken.com/v2"
+markets_url = "https://api.kraken.com/0/public/AssetPairs"
+max_concurrency = 10
+max_buffer_size = 100

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+import "types.proto";
+
+package book;
+
+message OrderBookRequest {}
+
+message OrderBookMessage {
+
+  types.MessageType type = 1;
+  int64 sequence = 2;
+  types.Exchange exchange = 3;
+  Book book = 4;
+}
+
+message Book {
+
+  repeated Offer asks = 1;
+  repeated Offer bids = 2;
+  int64 timestamp = 3;
+}
+
+message Offer {
+  string rate = 1;
+  string size = 2;
+}

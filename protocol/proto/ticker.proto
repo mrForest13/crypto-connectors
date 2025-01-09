@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+import "types.proto";
+
+package ticker;
+
+message TickerRequest {}
+
+message TickerMessage {
+
+  types.MessageType type = 1;
+  int64 sequence = 2;
+  types.Exchange exchange = 3;
+  Tick tick = 4;
+}
+
+message Tick {
+
+  int64 timestamp = 1;
+  string ask_price = 2;
+  string ask_size = 3;
+  string bid_price = 4;
+  string bid_size = 5;
+}

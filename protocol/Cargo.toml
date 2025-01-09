@@ -1,0 +1,19 @@
+[package]
+name = "protocol"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+
+[lib]
+path = "src/lib.rs"
+
+[build-dependencies]
+prost-build = { version = "0.13.4" }
+
+[dependencies]
+log = "0.4.22"
+prost = "0.13.4"
+strum = "0.26.3"
+async-nats = "0.38.0"
+strum_macros = "0.26.4"
+serde = { version = "1.0.217", features = ["derive"] }

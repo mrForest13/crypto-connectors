@@ -1,0 +1,40 @@
+[package]
+name = "public-kraken"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "public-kraken"
+path = "src/main.rs"
+
+[dependencies]
+log = "0.4.22"
+bytes = "1.9.0"
+prost = "0.13.3"
+config = "0.15.4"
+chrono = "0.4.38"
+anyhow = "1.0.94"
+futures = "0.3.31"
+async-nats = "0.38.0"
+reqwest = { version = "0.12.9", features = ["json"] }
+
+# serde
+serde_json = "1.0.133"
+serde = { version = "1.0.215", features = ["derive"] }
+
+# tokio
+tokio = { version = "1.41.1", features = ["full"] }
+tokio-tungstenite = { version = "0.24.0", features = ["native-tls"] }
+
+# axum
+axum = "0.8.1"
+axum-prometheus = "0.7.0"
+
+# decimals
+rust_decimal = "1.36.0"
+rust_decimal_macros = "1.36.0"
+
+# internal
+http = "0.1.0"
+protocol = "0.1.0"
+connector = "0.1.0"

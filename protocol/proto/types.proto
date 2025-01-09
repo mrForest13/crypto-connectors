@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package types;
+
+message SnapshotRequest {}
+
+enum Exchange {
+
+  CRYPTOCOM = 0;
+  KRAKEN = 1;
+}
+
+enum MessageType {
+
+  UPDATE = 0;
+  SNAPSHOT = 1;
+}
+
+enum Side {
+
+  SELL = 0;
+  BUY = 1;
+}
