@@ -3,19 +3,19 @@
 The goal for project is providing crypto 
 connectors with unify API (protobuf) as a service (docker images).
 
-# Api
+## Api
 
 All streams and endpoints are using protocol buffers models. Check `protocol/proto`
 
-# Public connector
+## Public connector
 
 Support markets configuration, order book, ticker and recent trades. 
 
-# TODO list
+## TODO list
 - finish kraken connector
 - add private connector (api based on api key) for both exchanges
 
-# How to run it
+## How to run it
 
 1. Create images for cryptocom
 
