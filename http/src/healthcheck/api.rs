@@ -80,9 +80,7 @@ mod tests {
         response.assert_json_contains(&expected)
     }
 
-    async fn example() -> () {
-        ()
-    }
+    async fn example() {}
 
     #[tokio::test]
     async fn health_check_return_page_not_found() {

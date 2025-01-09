@@ -125,8 +125,8 @@ async fn stream_trades_twice_times() -> Result<()> {
         assert_eq!(response.trades.len(), 1);
 
         if let Some(trade) = response.trades.first() {
-            assert_eq!(trade.size, "96448.00");
-            assert_eq!(trade.rate, "0.01430");
+            assert_eq!(trade.size, "0.01430");
+            assert_eq!(trade.rate, "97092.61");
             assert_eq!(trade.side, Side::Buy as i32);
         }
     }
@@ -138,8 +138,8 @@ async fn stream_trades_twice_times() -> Result<()> {
         assert_eq!(response.trades.len(), 1);
 
         if let Some(trade) = response.trades.first() {
-            assert_eq!(trade.size, "99092.61");
-            assert_eq!(trade.rate, "1.01430");
+            assert_eq!(trade.size, "1.01430");
+            assert_eq!(trade.rate, "99092.61");
             assert_eq!(trade.side, Side::Sell as i32);
         }
     }
