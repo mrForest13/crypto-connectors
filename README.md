@@ -25,5 +25,5 @@ Support markets configuration, order book, ticker and recent trades.
 
 `docker build --build-arg CONNECTOR=public-kraken -t public-kraken .`
 
-3. Run docker compose
+3. Run test-compose.yml
 4. Check examples `skd/examples`
